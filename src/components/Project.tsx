@@ -29,7 +29,7 @@ function Project() {
             <div className="project">
                 <a href="https://github.com/Pawieee/MyCollegeStats" target="_blank" rel="noreferrer"><img src={intellistats} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Pawieee/MyCollegeStats" target="_blank" rel="noreferrer"><h2>Intellistats</h2></a>
-                <p>This is an educational web app with the purpose of tracking the scores of course subjects and it automatically calculates your respective grade.</p>
+                <p>This is an educational web app with the purpose of tracking the scores of course subjects and it automatically calculates your respective grade. It uses basic HTML, CSS, JS and Php.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/Pawieee/PHPay" target="_blank" rel="noreferrer"><img src={phpay} className="zoom" alt="thumbnail" width="100%"/></a>
