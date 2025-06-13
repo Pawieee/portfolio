@@ -10,6 +10,8 @@ import {
 } from "./components";
 import FadeIn from './components/FadeIn';
 import './index.scss';
+import Balatro from './components/Balatro/Balatro';
+
 
 function App() {
     const [mode, setMode] = useState<string>('dark');
@@ -26,19 +28,34 @@ function App() {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
       }, []);
 
-    return (
-    <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-        <FadeIn transitionDuration={700}>
-            <Main/>
-            <Expertise/>
-            <Timeline/>
-            <Project/>
-            <Contact/>
-        </FadeIn>
-        <Footer />
-    </div>
-    );
+return (
+<div
+  className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}
+  style={{ position: 'relative', overflow: 'hidden' }}
+>
+  {/* 🌌 Wrap only <Main /> section with background */}
+  <div style={{ position: 'relative' }}>
+    <Balatro
+      isRotate={false}
+      mouseInteraction={true}
+      pixelFilter={700}
+    />
+    <Main />
+  </div>
+
+  {/* Other content (no background) */}
+  <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
+  <FadeIn transitionDuration={700}>
+    <Expertise />
+    <Timeline />
+    <Project />
+    <Contact />
+  </FadeIn>
+  <Footer />
+</div>
+
+);
+
 }
 
 export default App;
