@@ -1,7 +1,8 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBrain, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -52,7 +53,7 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faPython} size="3x"/>
                     <h3>Data Engineering</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as Python and SQL. I have a strong proficiency in Data Modeling and Data Transformation.</p>
+                    <p>Skilled in building end-to-end data-driven web applications using modern technologies such as Python and SQL, with a strong foundation in Data Engineering practices. Experienced in Data Modeling, ETL pipelines, and Data Transformation to support scalable analytics and workflow automation.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (

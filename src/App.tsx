@@ -4,6 +4,7 @@ import {
   Timeline,
   Expertise,
   Project,
+  Certification,
   Contact,
   Navigation,
   Footer,
@@ -49,6 +50,7 @@ return (
     <Expertise />
     <Timeline />
     <Project />
+    <Certification />
     <Contact />
   </FadeIn>
   <Footer />
