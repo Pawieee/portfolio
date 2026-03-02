@@ -10,6 +10,7 @@ import de_associate from '../assets/images/certs/de_associate.png';
 import ds_ai from '../assets/images/certs/ds_ai.png';
 import de_proj from '../assets/images/certs/de_proj.png';
 import it_jav from '../assets/images/certs/it_jav.png';
+import it_database from '../assets/images/certs/it_database.png';
 import shell from '../assets/images/certs/shell.png';
 import sql from '../assets/images/certs/sql.png';
 import '../assets/styles/Certifications.scss';
@@ -60,6 +61,9 @@ function Certification() {
            
             <div className="certification">
                 <a href="https://www.credly.com/badges/419eca11-d6f9-4279-9198-8dc1a0abb440" target="_blank" rel="noreferrer"><img src={it_jav} className="zoom" alt="thumbnail" width="80%"/></a>
+            </div>
+                        <div className="certification">
+                <a href="https://www.credly.com/badges/ebbb9012-5dca-4288-9594-b565fd530a26" target="_blank" rel="noreferrer"><img src={it_database} className="zoom" alt="thumbnail" width="80%"/></a>
             </div>
            
         </div>

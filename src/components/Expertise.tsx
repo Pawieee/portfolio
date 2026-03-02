@@ -10,6 +10,7 @@ import '../assets/styles/Expertise.scss';
 const labelsFirst = [
     "Python",
     "Pandas",
+    "Polars",
     "dbt",
     "dlt",
     "SQL",

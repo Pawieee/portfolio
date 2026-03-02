@@ -1,6 +1,7 @@
 import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import DataCampIcon from '../assets/images/datacamp.png';
 import '../assets/styles/Main.scss';
 import profilePic from '../assets/images/pic_daw.png';
 
@@ -17,6 +18,7 @@ function Main() {
           <div className="social_icons">
             <a href="https://github.com/Pawieee" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/pawieee/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+            <a href="https://www.datacamp.com/portfolio/pawieee" target="_blank" rel="noreferrer"><img src={DataCampIcon} alt="DataCamp" width="24"/></a>
           </div>
           <h1>Paulo Agujitas</h1>
           <p>Data Engineer</p>
@@ -24,6 +26,7 @@ function Main() {
           <div className="mobile_social_icons">
             <a href="https://github.com/Pawieee" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/pawieee/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+            <a href="https://www.datacamp.com/portfolio/pawieee" target="_blank" rel="noreferrer"><img src="https://www.datacamp.com/static/img/datacamp-icon.png" alt="DataCamp" width="24"/></a>
           </div>
         </div>
       </div>

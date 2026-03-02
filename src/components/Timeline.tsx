@@ -12,11 +12,23 @@ function Timeline() {
       <div className="items-container">
         <h1>Career History</h1>
         <VerticalTimeline>
+                    <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date="August 2022 - Present"
+            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">Computer Science Student</h3>
+            <h4 className="vertical-timeline-element-subtitle">University of Mindanao - Matina</h4>
+            <p>
+              Started learning CS fundamentals, Data Structures, Algorithms, and Software Engineering principles. Engaged in various projects to apply theoretical knowledge in practical scenarios.
+            </p>
+          </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2024 - 2025"
+            date="August 2024 - July 2025"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
@@ -28,14 +40,16 @@ function Timeline() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2022 - Present"
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="August 2025 - July 2025"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Computer Science Student</h3>
-            <h4 className="vertical-timeline-element-subtitle">University of Mindanao - Matina</h4>
+            <h3 className="vertical-timeline-element-title">Data Analytics Intern</h3>
+            <h4 className="vertical-timeline-element-subtitle">Globe Telecom</h4>
             <p>
-              Started learning CS fundamentals, Data Structures, Algorithms, and Software Engineering principles. Engaged in various projects to apply theoretical knowledge in practical scenarios.
+              Developed data processing platforms and automated data workflows. Conducted data analysis to identify trends and insights, contributing to informed decision-making processes.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
