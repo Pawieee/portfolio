@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import DataCampIcon from '../assets/images/datacamp.png';
 import '../assets/styles/Main.scss';
-import profilePic from '../assets/images/pic_daw.png';
+import profilePic from '../assets/images/profile_picture.jpg';
 
 
 function Main() {
@@ -12,7 +12,7 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src={profilePic} alt="Avatar" />
+          <img src={profilePic} alt="Paulo Agujitas" />
         </div>
         <div className="content">
           <div className="social_icons">
