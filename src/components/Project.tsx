@@ -4,6 +4,7 @@ import bigimbob from '../assets/images/bigimbob.png';
 import phpay from '../assets/images/phpay.png';
 import intellistats from '../assets/images/intellistats.png';
 import dbt from '../assets/images/dbt.png';
+import openDataEtl from '../assets/images/open_data_etl.png';
 import '../assets/styles/Project.scss';
 
 function Project() {
@@ -12,14 +13,19 @@ function Project() {
         <h1>Personal Projects</h1>
         <div className="projects-grid">
             <div className="project">
+                <a href="https://github.com/Pawieee/dlt-dbt-pipeline" target="_blank" rel="noreferrer"><img src={dbt} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://github.com/Pawieee/dlt-dbt-pipeline" target="_blank" rel="noreferrer"><h2>dlt + dbt Data Pipeline</h2></a>
+                <p>Automated extraction and transformation of Google Sheets form evaluation data into PostgreSQL with Python, dlt, and dbt, speeding up the pipeline by up to 70%. Wrote dbt data tests and SQL checks (nulls, uniqueness, row counts) and split extract and transform into modular layers, cutting onboarding time for new Google Sheets sources by 50%. Containerized PostgreSQL with Docker, cutting setup time by 80%.</p>
+            </div>
+            <div className="project">
+                <a href="https://github.com/Pawieee/open-data-ETL" target="_blank" rel="noreferrer"><img src={openDataEtl} className="zoom" alt="thumbnail" width="100%" style={{ aspectRatio: "1217 / 1071", objectFit: "contain", backgroundColor: "#fff" }}/></a>
+                <a href="https://github.com/Pawieee/open-data-ETL" target="_blank" rel="noreferrer"><h2>Open-Data ETL</h2></a>
+                <p>Built a batch ETL pipeline using Python, Polars, and SQL that loads multiple CSV files into Parquet and a DuckDB warehouse. Used Polars lazy evaluation for transformations, improving transformation time by 30%.</p>
+            </div>
+            <div className="project">
                 <a href="https://github.com/Pawieee/microbank" target="_blank" rel="noreferrer"><img src={microbank} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Pawieee/microbank" target="_blank" rel="noreferrer"><h2>Microbank</h2></a>
                 <p>Built a bank loan management application using Python and TypeScript that automates loan application assessments and manages loan transactions. Implemented Slowly Changing Dimension Type 2 (SCD2) data modeling to support efficient transaction updates and enable analytical querying for administrators.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/Pawieee/dlt-dbt-pipeline" target="_blank" rel="noreferrer"><img src={dbt} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/Pawieee/dlt-dbt-pipeline" target="_blank" rel="noreferrer"><h2>Evaluation Pipeline</h2></a>
-                <p>Designed and implemented an automated ETL pipeline using Python, dbt, and PostgreSQL (Docker) to handle form evaluation workflows based on data from Google Sheets. This solution improved the efficiency of DOUM’s evaluation process by up to 90%.</p>
             </div>
             <div className="project">
                 <a href="https://bigimbob.flutterflow.app/" target="_blank" rel="noreferrer"><img src={bigimbob} className="zoom" alt="thumbnail" width="100%"/></a>

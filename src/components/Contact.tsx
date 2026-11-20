@@ -1,10 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
+import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+
+// EmailJS settings are read at build time from .env.local (see .env.example).
+// The public key is meant to be shipped to the browser; it is not a secret.
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+type Status = 'idle' | 'sending' | 'sent' | 'error' | 'not-configured';
 
 function Contact() {
 
@@ -16,37 +25,44 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
-  const form = useRef();
+  const [status, setStatus] = useState<Status>('idle');
 
-  const sendEmail = (e: any) => {
+  const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
+    const hasName = name.trim() !== '';
+    const hasEmail = email.trim() !== '';
+    const hasMessage = message.trim() !== '';
 
-    /* Uncomment below if you want to enable the emailJS */
+    setNameError(!hasName);
+    setEmailError(!hasEmail);
+    setMessageError(!hasMessage);
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+    if (!hasName || !hasEmail || !hasMessage) {
+      return;
+    }
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setStatus('not-configured');
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        { name: name.trim(), email: email.trim(), message: message.trim() },
+        { publicKey: PUBLIC_KEY },
+      );
+      setStatus('sent');
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (error) {
+      console.error('EmailJS send failed', error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -56,16 +72,16 @@ function Contact() {
           <h1>Contact Me</h1>
           <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
           <Box
-            ref={form}
             component="form"
             noValidate
             autoComplete="off"
             className='contact-form'
+            onSubmit={sendEmail}
           >
             <div className='form-flex'>
               <TextField
                 required
-                id="outlined-required"
+                id="contact-name"
                 label="Your Name"
                 placeholder="What's your name?"
                 value={name}
@@ -77,7 +93,7 @@ function Contact() {
               />
               <TextField
                 required
-                id="outlined-required"
+                id="contact-email"
                 label="Email / Phone"
                 placeholder="How can I reach you?"
                 value={email}
@@ -90,7 +106,7 @@ function Contact() {
             </div>
             <TextField
               required
-              id="outlined-multiline-static"
+              id="contact-message"
               label="Message"
               placeholder="Send me any inquiries or questions"
               multiline
@@ -103,8 +119,22 @@ function Contact() {
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
             />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
+            {status === 'sent' && (
+              <Alert severity="success" className="contact-status">Thanks! Your message was sent. I'll get back to you soon.</Alert>
+            )}
+            {status === 'error' && (
+              <Alert severity="error" className="contact-status">Sorry, the message could not be sent. Please try again, or reach me on LinkedIn.</Alert>
+            )}
+            {status === 'not-configured' && (
+              <Alert severity="info" className="contact-status">The contact form is not set up yet. Please reach me on LinkedIn for now.</Alert>
+            )}
+            <Button
+              type="submit"
+              variant="contained"
+              endIcon={<SendIcon />}
+              disabled={status === 'sending'}
+            >
+              {status === 'sending' ? 'Sending...' : 'Send'}
             </Button>
           </Box>
         </div>
