@@ -18,7 +18,9 @@
     color: white;
   }
 
-  fieldset {
+  // Paint the white box on the input root, not on the fieldset.
+  // The fieldset sits on top of the input, so a filled fieldset hides the typed text.
+  .MuiOutlinedInput-root {
     background-color: white;
   }
 }
@@ -45,4 +47,7 @@ form {
 .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
+}
+.contact-status {
+  margin-bottom: 15px;
 }
