@@ -16,14 +16,14 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="September 2026 - Present"
+            date="September 2026 - November 2026"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Full Stack / Python Developer</h3>
             <h4 className="vertical-timeline-element-subtitle">PulseTheta - Munich, Bavaria, Germany (Remote)</h4>
             <p>
-              Build and maintain Python data pipelines in Prefect that load trading data into Supabase (PostgreSQL), using AI-assisted development with Claude Code. Run scheduled flows with retries and failure alerts, fix failed runs, and open and review pull requests on GitHub. Set up GitHub Actions workflows with Claude for automated code review, and built n8n workflows for WhatsApp messages and Deluge scripts for customer billing.
+              Built and maintained Python data pipelines in Prefect that loaded trading data into Supabase (PostgreSQL), using AI-assisted development with Claude Code. Ran scheduled flows with retries and failure alerts, fixed failed runs, and opened and reviewed pull requests on GitHub. Set up GitHub Actions workflows with Claude for automated code review, and built n8n workflows for WhatsApp messages and Deluge scripts for customer billing.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
